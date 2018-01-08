@@ -1,0 +1,25 @@
+
+/* 
+    Created on : 17/12/2017, 17:39:07
+    Author     : alberto
+*/
+
+@import "index.css";
+@import "compartido.css";
+@import "fuentes/stylesheet.css";
+
+.background {
+    background-image: url("../img/pantalla_cargando/cargando_fondo.png");
+}
+
+#logo {
+    padding-top: 25%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#texto_cargando {
+    font-family: 'Helvetica LT Std';
+    color: white;
+    text-align: center;
+}

@@ -1,0 +1,54 @@
+/* 
+    Created on : 06/01/2018, 11:42:22
+    Author     : alberto
+*/
+
+@import "compartido.css";
+@import "fuentes/stylesheet.css";
+
+/*botonera*/
+div.contenedor_botonera {
+    position: absolute;
+    top: 61% !important;
+    width: 100%;
+}
+
+/*contador km*/
+div.contenedor_contadorkm {
+    position: absolute;
+    top: 40% !important;
+    width: 100%;
+}
+
+#km {
+    font-family: 'Air Americana';
+    font-size: 30px;
+    color: #474749;
+    text-align: center;
+    font-weight: bold;
+}
+
+/*totales*/
+div.contenedor_totales {
+    position: absolute;
+    top: 79% !important;
+    width: 100%;
+}
+
+#km_total {
+    font-family: 'Air Americana';
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-right: 25px;
+}
+
+#hopes {
+    font-family: 'Air Americana';
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 18px;
+}
