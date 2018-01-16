@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="lib/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery.js" type="text/javascript"></script>
+        <script src="lib/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+        
+        <script src="js/hopes.js" type="text/javascript"></script>
+        <link href="css/modo_conduccion.css" rel="stylesheet" type="text/css"/>
+        <script src="js/modo_conduccion/modo_conduccion_principal.js" type="text/javascript"></script>
+        <script src="js/urls.js" type="text/javascript"></script>
+
+        <script>
+            $(function () {
+                $("#btn_iniciar").on("click", iniciar);
+                $("#btn_detener").on("click", detener);
+                
+                if ($.GET("operacion") == "iniciar") {
+                    cambiar_estado_iniciando_botones();
+                    modo_conduccion();
+                } else {
+                    cambiar_estado_detenido_botones();
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <img src="img/modo_conduccion/fondo_mod_cond_princ.jpg" alt="" class="background"/>
+
+        <div class="contenedor_contadorkm">
+            <div class="ui-grid-solo">
+                <div class="ui-block-a">
+                    <p id="km">0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contenedor_botonera">
+            <div class="ui-grid-a">
+                <div class="ui-block-a" id="contenedor_btn_iniciar"><input value="INICIAR" type="button" id="btn_iniciar"></div>
+                <div class="ui-block-b" id="contenedor_btn_detener"><input value="DETENER" type="button" id="btn_detener"></div>
+            </div>
+        </div>
+
+        <div class="contenedor_totales">
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><p id="hopes">0</p></div>
+                <div class="ui-block-b"><p id="km_total">0</p></div>
+            </div>
+        </div>
+        
+    </body>
+</html>

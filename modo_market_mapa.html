@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="css/modo_market_mapa.css" rel="stylesheet" type="text/css"/>
+        <script src="js/hopes.js" type="text/javascript"></script>
+        <script src="js/modo_market.js" type="text/javascript"></script>
+    </head>
+    <body>
+
+        <img src="img/modo_market/modo_market_encabezado_mapa.jpg" alt="" class="encabezado_img"/>
+        <div id="map"></div>
+
+        <script>
+            var map;
+            var centroCapital = {lat: -34.6179752, lng: -58.4463823};
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: centroCapital,
+                    zoom: 15
+                });
+
+                /*Muestra las coordenadas en donde se haga click
+                 * google.maps.event.addListener(map, 'click', function (event) {
+                 var latitude = event.latLng.lat();
+                 var longitude = event.latLng.lng();
+                 alert(latitude + ', ' + longitude);
+                 });*/
+
+
+                var contentString = "\n\
+                <div>\n\
+                <h1>Restaurant xxxx</h1>\n\
+                <p style='color: red'>30% Descuento desayuno</p>\n\
+                <p style='color: blue'>HOPE$ A CANJEAR / 70</p>\n\
+                <button onclick='generar_cupon();'>Canjear</button>\n\
+                </div>";
+
+                var image = {
+                    url: 'img/modo_market/bandera_restaurant.png',
+                    size: new google.maps.Size(26, 32),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(0, 32)
+                };
+
+                // marker
+                var coordenadasRestaurantes = new Array(
+                        {lat: -34.614985408359345, lng: -58.44829559326172}
+                ,
+                        {
+                            lat: -34.615266302761185, lng: -58.444390296936035
+                        }
+                ,
+                        {
+                            lat: -34.61671435626653, lng: -58.44151496887207
+                        }
+                ,
+                        {
+                            lat: -34.61855253109212, lng: -58.447651863098145
+                        }
+                ,
+                        {
+                            lat: -34.621552790838685, lng: -58.44275951385498
+                        }
+                ,
+                        {
+                            lat: -34.62402487480255, lng: -58.445420265197754
+                        }
+                ,
+                        {
+                            lat: -34.609685762763505, lng: -58.441386222839355
+                        }
+                ,
+                        {
+                            lat: -34.623141996126506, lng: -58.45297336578369
+                        }
+                ,
+                        {
+                            lat: -34.61053346388854, lng: -58.43898296356201
+                        }
+                ,
+                        {lat: -34.623353887865434, lng: -58.44220161437988}
+                );
+
+                var infoWindow = new google.maps.InfoWindow;
+                for (var i = 0; i < coordenadasRestaurantes.length; i++) {
+                    var marker = new google.maps.Marker({
+                        position: coordenadasRestaurantes[i],
+                        icon: image,
+                        map: map,
+                        title: 'Restaurant ' + i
+                    });
+
+                    marker.addListener('click', function () {
+                        infoWindow.setContent(contentString);
+                        infoWindow.open(map, this);
+                    });
+                }
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVO6EHbPBde3UWki394J_sVZPk_CZhem4&callback=initMap"
+        async defer></script>
+    </body>
+</html>
