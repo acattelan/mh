@@ -8,10 +8,10 @@
     <!-- versionCode is optional and Android only -->
     <plugin name="cordova-plugin-whitelist" />
 
-    <name>ModoHopePrototipo</name>
+    <name>Modo Hope</name>
     <icon src="icon.png" />
     <description>
-        Modo Hope Prototipo
+        Modo Hope
     </description>
 
     <author href="https://build.phonegap.com" email="support@phonegap.com">
