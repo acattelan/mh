@@ -7,10 +7,18 @@
 
 div.contenedor_login {
     position: absolute;
-    top: 210px;
+    top: 0px;
     left: 0px;
     width: 100%;
-    height: auto;
+    height: 100%;
+    
+    background-image: url(../img/login/login.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.contenedor_input {
+    margin-top: 245px;
 }
 
 div.contenedor_login .ui-input-text {

@@ -16,11 +16,3 @@
     width:100%;
     height:100%;
 }
-
-.background_altofijo {
-    width: 100%; 
-    height: auto; 
-    position: fixed; 
-    left: 0px; 
-    top: 0px; 
-}
